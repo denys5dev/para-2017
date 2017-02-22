@@ -1,0 +1,96 @@
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">{{glider?.model}} : DETAILS</h4>
+        <table class="detail-table">
+            <tr>
+                <th>Size</th>
+                <th class="detail-size" *ngFor="let detail of details">{{detail.size}}</th>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td *ngFor="let detail of details">€ {{detail.price}}</td>
+            </tr>
+            <tr>
+                <th>Proj Area</th>
+                <td *ngFor="let detail of details">{{detail.projectArea}} m²</td>
+            </tr>
+            <tr>
+                <th>Flat Area</th>
+                <td *ngFor="let detail of details">{{detail.faltArea}} m²</td>
+            </tr>
+            <tr>
+                <th>Proj Span</th>
+                <td *ngFor="let detail of details">{{detail.projectSpan}} m</td>
+            </tr>
+            <tr>
+                <th>Flat Span</th>
+                <td *ngFor="let detail of details">{{detail.flatSpan}} m</td>
+            </tr>
+            <tr>
+                <th>Proj Aspect Ratio</th>
+                <td *ngFor="let detail of details">{{detail.projectAspectRatio}}</td>
+            </tr>
+            <tr>
+                <th>Flat Aspect Ratio</th>
+                <td *ngFor="let detail of details">{{detail.flatAspectRatio}}</td>
+            </tr>
+            <tr>
+                <th>Root Chord</th>
+                <td *ngFor="let detail of details">{{detail.rootChord}} m</td>
+            </tr>
+            <tr>
+                <th>Glider Weight</th>
+                <td *ngFor="let detail of details">{{detail.gliderWeight}} kg</td>
+            </tr>
+            <tr>
+                <th>In-Flight-Weight</th>
+                <td *ngFor="let detail of details">{{detail.inFlightWeight}} kg</td>
+            </tr>
+            <tr>
+                <th>Naked-Pilot-Weight</th>
+                <td *ngFor="let detail of details">{{detail.nakedPilotWeight}} kg</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td *ngFor="let detail of details">{{detail.type}}</td>
+            </tr>
+            <tr>
+                <th>Upper Surface</th>
+                <td *ngFor="let detail of details">{{detail.upperSufcace}} g/m²</td>
+            </tr>
+            <tr>
+                <th>Under Surface</th>
+                <td *ngFor="let detail of details">{{detail.underSurface}} g/m²</td>
+            </tr>
+            <tr>
+                <th>Trims</th>
+                <td *ngFor="let detail of details">{{detail.trims}}</td>
+            </tr>
+            <tr>
+                <th>Speed</th>
+                <td *ngFor="let detail of details">{{detail.speed}} km/h</td>
+            </tr>
+            <tr>
+                <th>Manual</th>
+                <td *ngFor="let detail of details">
+                    <a href="{{detail.manual}}" target="_blank">MANUAL</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Certification Report</th>
+                <td *ngFor="let detail of details">
+                    <a href="{{detail.certificationReport}}" target="_blank">REPORT</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Certification</th>
+                <td *ngFor="let detail of details">{{detail.certification}}</td>
+            </tr>
+
+        </table>
+        <div class="video-box">
+            <iframe width='420' height='315' *ngIf="glider" class="glider-video" [src]="url" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </md-card>
+
+</div>

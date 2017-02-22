@@ -1,0 +1,10 @@
+<div class="manufactory-wrapper cf">
+    <md-card *ngFor="let company of companies" class="company-card">
+        <md-card-title-group>
+            <img md-card-sm-image src="{{company.logo}}">
+            <md-card-title class="company-name">{{company.name}}</md-card-title>
+            <md-card-subtitle><a href="{{company.web}}" target="_blank" class="manufactory-link">{{company.web}}</a></md-card-subtitle>
+        </md-card-title-group>
+        <button md-raised-button color="primary" (click)="goToModels(company._id)">Gliders</button>
+    </md-card>
+</div>

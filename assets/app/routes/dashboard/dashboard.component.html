@@ -1,0 +1,37 @@
+<div class="dashboard-container cf">
+    <div class="wrapper-left">
+        <div class="sidebar">
+            <h4 class="sidebar-header">MENU</h4>
+            <div class="sidebar-menu">
+                <ul class="sidebar-list">
+                    <li class="sidebar-list__item">
+                        <a class="sidebar-list__link" routerLink="addcompany" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+                            <i class="fa fa-home menu-icon" aria-hidden="true"></i>Add Company
+                        </a>
+                    </li>
+                    <li class="sidebar-list__item">
+                        <a class="sidebar-list__link" routerLink="addmodel" routerLinkActive="active-link">
+                            <i class="fa fa-plane menu-icon" aria-hidden="true"></i> Add Model
+                        </a>
+                    </li>
+                    <li class="sidebar-list__item">
+                        <a class="sidebar-list__link" routerLink="addglider" routerLinkActive="active-link">
+                            <i class="fa fa-cart-plus menu-icon" aria-hidden="true"></i> Add Glider
+                        </a>
+                    </li>
+                    <li class="sidebar-list__item">
+                        <a class="sidebar-list__link" routerLink="adddnews" routerLinkActive="active-link">
+                            <i class="fa fa-newspaper-o menu-icon" aria-hidden="true"></i> Add News
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="wrapper-right">
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

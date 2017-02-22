@@ -1,0 +1,155 @@
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">ADD GLIDER</h4>
+        <form (ngSubmit)="save()" [formGroup]="detailForm">
+            <table style="width: 100%" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Size name" formControlName="size" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <!--<md-select formControlName="modelId" placeholder="Model" required>
+                            <md-option value="{{g._id}}" *ngFor = "let g of gliders" >{{g.model}}</md-option>
+                        </md-select>-->
+
+                        <label>Model: </label>
+                        <select formControlName="modelId"  placeholder="Model" required>
+                            <option value="{{g._id}}" *ngFor = "let g of gliders">{{g.model}}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Price" formControlName="price" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Certification" formControlName="certification" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Project Area" formControlName="projectArea" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Flat Area" formControlName="faltArea" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Project Span" formControlName="projectSpan" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Flat Span" formControlName="flatSpan" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Project Aspect Ratio" formControlName="projectAspectRatio" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Flat Aspect Ratio" formControlName="flatAspectRatio" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Root Chord" formControlName="rootChord" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Gleder Weight" formControlName="gliderWeight" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Nuber of Cells" formControlName="numberOfCells" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="In-Flight-Weight" formControlName="inFlightWeight" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Naked Pilot Weight" formControlName="nakedPilotWeight" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Type" formControlName="type" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Upper-surface" formControlName="upperSufcace" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Under-surface" formControlName="underSurface" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Trims" formControlName="trims" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Speed" formControlName="speed" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Manual" formControlName="manual" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Certification Report" formControlName="certificationReport" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <button md-raised-button color="primary" type="submit">Save</button>
+            <button md-raised-button color="warn" type="reset" (click)="reset()">Clear</button>
+        </form>
+    </md-card>
+</div>
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">Gliders</h4>
+        <table style="width:100%" class="glider-table">
+            <tr *ngFor="let detail of details; let i = index" >
+                <td>{{ i + 1 }}</td>
+                <td>{{ detail?.size }}</td>
+                <td>{{ detail?.price }}</td>
+                <td>{{ detail?.glider.model }}</td>
+                <td>
+                    <button md-raised-button color="accent" (click)="edit(detail)">Edit</button>
+                    <button md-raised-button color="warn" (click)="delete(detail._id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </md-card>
+</div>

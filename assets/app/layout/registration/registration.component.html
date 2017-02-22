@@ -1,0 +1,23 @@
+<div class="join-modal" [hidden]="!_layoutService.isOpenJoinModal()" [ngClass]="{fadeOut: _layoutService.isOpenJoinModal()}">
+    <md-card>
+        <p class="close-btn" (click)="_layoutService.closeJoinModal(false)">X</p>
+        <img src="/images/para2017.svg" class="registration-logo" alt="logo">
+        <h3 class="registration-header">Registration</h3>
+        <form (ngSubmit)="save()" class="registration-form" [formGroup]="registrationForm">
+            <md-input-container class="registration-form_input input-material" mdInput>
+                <input mdInput placeholder="First and last Name" type="text" formControlName="name" required>
+            </md-input-container>
+            <md-input-container class="registration-form_input input-material" mdInput>
+                <input mdInput placeholder="Email" type="email" formControlName="email" required>
+            </md-input-container>
+            <md-input-container class="registration-form_input input-material" mdInput>
+                <input mdInput placeholder="Password" type="password" formControlName="password" required>
+            </md-input-container>
+            <md-input-container class="registration-form_input input-material" mdInput>
+                <input mdInput placeholder="Confirm password" type="password" formControlName="confirmPassword" required>
+            </md-input-container>
+            <button md-raised-button class="join-btn" type="submit">Join</button>
+        </form>
+    </md-card>
+</div>
+<div class="backdrop" [hidden]="!_layoutService.isOpenJoinModal()" (click)="_layoutService.closeJoinModal(false)" [ngClass]="{fadeOut: _layoutService.isOpenJoinModal()}"></div>

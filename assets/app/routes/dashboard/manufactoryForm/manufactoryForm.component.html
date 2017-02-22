@@ -1,0 +1,76 @@
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">Add Company</h4>
+        <form (ngSubmit)="save()" [formGroup]="companyForm">
+            <table style="width: 100%" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Company Name" formControlName="name" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Adress" formControlName="adress" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="City" formControlName="city" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Country" formControlName="country" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material" type="email">
+                            <input mdInput placeholder="Email" formControlName="email" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Web" formControlName="web" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Phone" formControlName="phone" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Logo" formControlName="logo" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <button md-raised-button color="primary" type="submit">Save</button>
+            <button md-raised-button color="warn" type="reset" (click)="reset()">Clear</button>
+        </form>
+    </md-card>
+</div>
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">Companies</h4>
+        <table style="width:100%" class="company-table">
+            <tr *ngFor="let company of companies; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{company.name}}</td>
+                <td><img src="{{company.logo}}" alt="" class="table-img"></td>
+                <td><a href="{{company.web}}" target="_blank" class="table-link">{{company.web}}</a></td>
+                <td>
+                    <button md-raised-button color="accent" (click)="edit(company)">Edit</button>
+                    <button md-raised-button color="warn" (click)="delete(company._id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </md-card>
+</div>

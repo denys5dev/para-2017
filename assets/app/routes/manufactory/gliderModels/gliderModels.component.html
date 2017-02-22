@@ -1,0 +1,17 @@
+<div class="manufactory-wrapper">
+    <md-card class="model-card" *ngFor="let glider of gliders" >
+        <md-card-header class="glider-heaader">
+            <md-card-title class="title-glider">{{glider?.model}}</md-card-title>
+            <md-card-subtitle>{{glider.year}}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="{{glider?.photo}}" class="img-glider">
+        <md-card-content>
+            <p class="text-glider">
+                {{glider?.about}}
+            </p>
+        </md-card-content>
+        <md-card-actions>
+            <button md-button (click) = "goToDetail(glider._id)">DETAILS</button>
+        </md-card-actions>
+    </md-card>
+</div>

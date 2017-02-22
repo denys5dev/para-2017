@@ -1,0 +1,38 @@
+.manufactory-wrapper {
+    padding: 30px;
+    margin-top: 64px;
+}
+
+.img-glider {
+    width: 200px;
+    height: auto;
+}
+
+.text-glider {
+    width: 200px;
+}
+
+.title-glider {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+}
+
+.model-card {
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    max-width: 300px;
+    float: left;
+}
+
+.glider-heaader {
+    width: 200px;
+    text-align: center;
+    display: block;
+}
+
+:host {
+    width: 100%;
+    display: block;
+    position: absolute;
+}

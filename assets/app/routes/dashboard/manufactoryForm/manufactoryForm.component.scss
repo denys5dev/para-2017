@@ -1,0 +1,33 @@
+.app-content {
+  padding: 20px;
+  opacity: 0.9;
+}
+.card-header {
+    text-transform: uppercase;
+}
+
+.line{
+    display: inline-block;
+    border-bottom: 1px black solid;
+    width: 300px;
+}
+.input-material {
+  font-family: 'Oswald', sans-serif;
+  width: 80%;
+}
+
+.company-table{
+  font-family: 'Oswald', sans-serif;
+}
+
+.table-img{
+  width: 40px;
+  height: 40px;
+}
+
+.table-link{
+  color: #009688;
+}
+
+:host { width: 100%; display: block; position: absolute; }
+

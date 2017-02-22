@@ -1,0 +1,67 @@
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">ADD MODEL</h4>
+        <form (ngSubmit)="save()" [formGroup]="modelForm">
+            <table style="width: 100%" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Model Name" formControlName="model" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Photo" formControlName="photo" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Year" formControlName="year" required>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Video" formControlName="video" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <textarea mdInput placeholder="About" formControlName="about" required></textarea>
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <!--<md-select formControlName="company" placeholder="Comapny" required>
+                            <md-option value="{{c._id}}" *ngFor = "let c of companies">{{c.name}}</md-option>
+                        </md-select>-->
+                        <label>Select Company: </label>
+                        <select formControlName="company"  placeholder="Comapny" required>
+                            <option value="{{c._id}}" *ngFor = "let c of companies">{{c.name}}</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button md-raised-button color="primary" type="submit">Save</button>
+            <button md-raised-button color="warn" type="reset" (click)="reset()">Clear</button>
+        </form>
+    </md-card>
+</div>
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">MODELS</h4>
+        <table style="width:100%" class="glider-table">
+            <tr *ngFor="let glider of gliders; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{glider.model}}</td>
+                <td>{{glider.year}}</td>
+                <td>
+                    <button md-raised-button color="accent" (click)="edit(glider)">Edit</button>
+                    <button md-raised-button color="warn" (click)="delete(glider._id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </md-card>
+</div>

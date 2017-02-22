@@ -1,0 +1,38 @@
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">ADD MODEL</h4>
+
+        <form (ngSubmit)="save()" [formGroup]="newsForm">
+            <table style="width: 100%" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Title" formControlName="title" required>
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <simple-tiny [elementId]="'my-editor-id'" (onEditorKeyup)="keyupHandlerFunction($event)"></simple-tiny>
+            <div class="btn-group-editor">
+                <button md-raised-button color="primary" type="submit">Save</button>
+                <button md-raised-button color="warn" type="reset" (click)="reset()">Clear</button>
+            </div>
+        </form>
+    </md-card>
+</div>
+<div class="app-content">
+    <md-card>
+        <h4 class="card-header">NEWS</h4>
+        <table style="width:100%" class="news-table">
+            <tr *ngFor="let new of news | orderBy : ['-']; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{new.title}}</td>
+                <td>{{new.date | date: 'medium'}}</td>
+                <td>{{new.likes}}</td>
+                <td>
+                    <button md-raised-button color="warn" (click)="delete(new._id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </md-card>
+</div>

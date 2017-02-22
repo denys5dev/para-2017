@@ -1,0 +1,190 @@
+.header {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    padding: 0;
+}
+
+.logo-link {
+    text-decoration: none;
+    padding-left: 30px;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+}
+
+.logo-text {
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0.80;
+    font-family: 'Oswald', sans-serif;
+}
+
+.top-nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    &__link {
+        text-decoration: none;
+        font-family: 'Oswald', sans-serif;
+        color: #fff;
+        opacity: 0.86;
+        font-weight: 400;
+        padding: 10px;
+        letter-spacing: 0;
+        font-size: 16px;
+        text-transform: uppercase;
+        &:hover {
+            background-color: rgb(211, 47, 47);
+            line-height: 42px;
+            -webkit-transition: ease-in-out .2s;
+            transition: ease-in-out .2s;
+        }
+    }
+    &_username {
+        font-family: 'Oswald', sans-serif;
+        padding: 20px;
+        margin: 0;
+    }
+    &_avatar {
+        width: 35px;
+        padding: 0px;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 24px;
+        margin-right: 7px;
+    }
+}
+
+.fa-caret-down {
+    margin-right: 10px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.top-nav-menu_login {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.profile-menu {
+    cursor: pointer;
+}
+
+.logout-block {
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(211, 47, 47);
+    }
+}
+
+.open {
+    background-color: rgb(211, 47, 47);
+}
+
+.login-link {
+    font-family: 'Oswald', sans-serif;
+    width: 80px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.86;
+    font-weight: 300 !important;
+    padding: 10px;
+    letter-spacing: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    &:hover {
+        background-color: rgb(211, 47, 47);
+        line-height: 42px;
+        -webkit-transition: ease-in-out .2s;
+        transition: ease-in-out .2s;
+        cursor: pointer;
+    }
+}
+
+.user-menu {
+    background-color: #fff;
+    font-size: 16px;
+    height: 47px;
+    position: absolute;
+    margin-top: 70px;
+    width: 133px;
+    right: 0;
+    border: 1px solid #009688;
+    margin-right: 8px;
+}
+
+.context-item {
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    padding-top: 0px;
+    line-height: 23px;
+    &:hover {
+        background-color: rgb(211, 47, 47);
+        color: white;
+        -webkit-transition: ease-in-out .2s;
+        transition: ease-in-out .2s;
+        cursor: pointer;
+    }
+}
+
+.separate-line {
+    border-bottom: 1px solid grey;
+    display: block;
+}
+
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox.  */
+    /* Every toolbar row uses a flexbox row layout. */
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+}
+
+.example-fill-remaining-space-1 {
+    /* This fills the remaining space, by using flexbox.  */
+    /* Every toolbar row uses a flexbox row layout. */
+    -webkit-box-flex: 8;
+        -ms-flex: 8 1 auto;
+            flex: 8 1 auto;
+}
+
+.active-link {
+    background-color: rgb(211, 47, 47);
+    line-height: 42px;
+}
+
+.top-nav-menu_link1 {
+    cursor: pointer;
+}
+
+.logo-text {
+    float: left;
+    padding-top: 18px;
+}

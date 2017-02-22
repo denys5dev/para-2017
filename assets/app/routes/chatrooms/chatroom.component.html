@@ -1,0 +1,23 @@
+<div class="chat-wrapper">
+    <md-card class="chat-room">
+        <div class="wrapper" #chatWindow>
+            <div class="dialogbox" *ngFor="let message of chatroom">
+                <div class="tip-user">
+                    <span class="tip-name">{{message.user}}: </span>
+                </div>
+                <div class="body">
+                    <span class="tip tip-left"></span>
+                    <div class="message">
+                        <span>{{message.message}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </md-card>
+    <md-card class="chat-input">
+        <md-input-container class="input-material">
+            <input mdInput placeholder="Message" [(ngModel)]="msg" (keyup.enter)="send(msg)">
+        </md-input-container>
+        <button md-raised-button color="primary" class="btn-chat" (click)="send(msg)" >Send</button>
+    </md-card>
+</div>

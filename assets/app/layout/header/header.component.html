@@ -1,0 +1,30 @@
+<md-toolbar color="warn" class="header">
+    <a href="" class="logo-link">
+        <span class="logo-text">para2017</span>
+        <img src="/images/para2017.svg" class="logo" alt="">
+    </a>
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <nav class="top-nav-menu">
+        <a routerLink="/home" routerLinkActive="active-link" class="top-nav-menu__link">Home</a>
+        <a routerLink="/manufactories" routerLinkActive="active-link" class="top-nav-menu__link">Manufactories</a>
+        <a routerLink="/weather" routerLinkActive="active-link" class="top-nav-menu__link">Weather</a>
+        <a routerLink="/chatroom" routerLinkActive="active-link" class="top-nav-menu__link" *ngIf="_auth.isLoggedIn()">Chatrooms</a>
+        <a routerLink="/dashboard" routerLinkActive="active-link" class="top-nav-menu__link" *ngIf="_auth.isAdmin() == 0">Dashboard</a>
+    </nav>
+    <span class="example-fill-remaining-space-1"></span>
+    <nav class="top-nav-menu_login" *ngIf="!_auth.isLoggedIn()" >
+        <a class="login-link" *ngIf="!_auth.isLoggedIn()" (click)="_layoutService.openLoginModal(true)">Log in</a>
+        <a class="login-link" *ngIf="!_auth.isLoggedIn()" (click)="_layoutService.openJoinModal(true)">Join</a>
+    </nav>
+    <nav class="top-nav-menu_login logout-block" *ngIf="_auth.isLoggedIn()" (click)="showMenu()" [ngClass] ="{'open': userMenu}">
+       <p class="top-nav-menu_username" *ngIf = "_auth.getUserName()" [innerText] ="_auth.getUserName()" ></p>
+        <img class="top-nav-menu_avatar" src="/images/male-avatar-1.png" alt="avatar" *ngIf="_auth.isLoggedIn()">
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </nav>
+    <div class="user-menu" [hidden]="!userMenu" [@contextMenu]="animateState">
+        <a class="context-item" *ngIf="_auth.isLoggedIn()">Profile</a>
+        <div class="separate-line"></div>
+        <a class="context-item" *ngIf="_auth.isLoggedIn()" (click)="logout()">Logout</a>
+    </div>
+</md-toolbar>

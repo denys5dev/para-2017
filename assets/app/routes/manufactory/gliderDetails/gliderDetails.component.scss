@@ -1,0 +1,52 @@
+:host {
+    width: 100%;
+    display: block;
+    position: absolute;
+}
+.card-header {
+  font-family: 'Oswald', sans-serif;
+}
+.app-content {
+  margin-top: 60px;
+  padding: 20px;
+  opacity: 0.9;
+}
+.detail-table {
+  font-family: 'Oswald', sans-serif;
+  // background-color: white;
+  // border: 1px solid black;
+  width: 100%;
+}
+.detail-size {
+  font-weight: 600;
+  font-size: 20px;
+}
+.glider-video {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+td, th {
+  width: 3rem;
+  height: 2rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+th {
+  background: lightblue;
+  border-color: white;
+}
+
+tr:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+th:hover {
+  cursor: pointer;
+  background-color: greenyellow;
+}
+.video-box{
+  margin-top: 30px;
+  border-top: 1px solid grey;
+}

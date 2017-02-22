@@ -1,0 +1,19 @@
+.manufactory-wrapper {
+    padding: 30px;
+    margin-top: 64px;
+}
+.manufactory-link {
+    color: gray;
+}
+
+.company-name {
+    font-family: 'Oswald', sans-serif;
+}
+
+.company-card {
+    margin: 10px;
+    min-width: 250px;
+    float: left;
+}
+
+:host { width: 100%; display: block; position: absolute; }
