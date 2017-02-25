@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { Observable } from 'rxjs';
-import 'rxjs/Rx';
+import { Injectable } from "@angular/core";
+import { Http, Response, RequestOptions, Headers } from "@angular/http";
+import { Observable } from "rxjs";
+import "rxjs/Rx";
 
-import { ICompany } from './../../shared/models/Company';
-import { IGlider } from './../../shared/models/Glider';
-import { IGliderDetail } from '../../shared/models/IGliderDetail';
+import { ICompany } from "./../../shared/models/Company";
+import { IGlider } from "./../../shared/models/Glider";
+import { IGliderDetail } from "../../shared/models/IGliderDetail";
 
-import { ENTRY_POINT } from './../../core/env/env';
+import { ENTRY_POINT } from "./../../core/env/env";
 
 @Injectable()
 
@@ -16,7 +16,7 @@ export class DashboardService {
     private companys: ICompany[] = [];
     private entryPoint = ENTRY_POINT;
     private userId;
-    private headers = new Headers({ 'Content-Type': 'application/json' });
+    private headers = new Headers({ "Content-Type": "application/json" });
 
     constructor(private _http: Http) {
 
@@ -26,9 +26,9 @@ export class DashboardService {
 
     addCompany(company: ICompany) {
 
-        this.userId = localStorage.getItem('userId');
+        this.userId = localStorage.getItem("userId");
 
-        return this._http.post(this.entryPoint + 'company/' + this.userId, company)
+        return this._http.post(this.entryPoint + "company/" + this.userId, company)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -36,7 +36,7 @@ export class DashboardService {
     }
 
     getCompanies() {
-        return this._http.get(this.entryPoint + 'companies')
+        return this._http.get(this.entryPoint + "companies")
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -44,7 +44,7 @@ export class DashboardService {
     }
 
     getCompanyById(id) {
-        return this._http.get(this.entryPoint + 'company/' + id)
+        return this._http.get(this.entryPoint + "company/" + id)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -53,9 +53,9 @@ export class DashboardService {
 
     deleteCompany(id) {
 
-        this.userId = localStorage.getItem('userId');
-        
-        return this._http.delete(this.entryPoint + 'company/' + this.userId, new RequestOptions({
+        this.userId = localStorage.getItem("userId");
+
+        return this._http.delete(this.entryPoint + "company/" + this.userId, new RequestOptions({
             headers: this.headers,
             body: { companyId: id }
         }))
@@ -66,7 +66,7 @@ export class DashboardService {
     }
 
     updateCompany(id, company) {
-        return this._http.put(this.entryPoint + 'company/' + id, company)
+        return this._http.put(this.entryPoint + "company/" + id, company)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -76,7 +76,7 @@ export class DashboardService {
     // GLIDER MODEL REST----------------------------------------------------------
 
     addGliderModel(glider: IGlider) {
-        return this._http.post(this.entryPoint + 'glider', glider)
+        return this._http.post(this.entryPoint + "glider", glider)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -84,7 +84,7 @@ export class DashboardService {
     }
 
     getGlidersModels() {
-        return this._http.get(this.entryPoint + 'gliders')
+        return this._http.get(this.entryPoint + "gliders")
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -92,7 +92,7 @@ export class DashboardService {
     }
 
     deleteGliderModel(id) {
-        return this._http.delete(this.entryPoint + 'glider/' + id)
+        return this._http.delete(this.entryPoint + "glider/" + id)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -100,7 +100,7 @@ export class DashboardService {
     }
 
     updateGliderModel(id, company) {
-        return this._http.put(this.entryPoint + 'glider/' + id, company)
+        return this._http.put(this.entryPoint + "glider/" + id, company)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -110,7 +110,7 @@ export class DashboardService {
     // DETAILS  REST----------------------------------------------------------
 
     addDetails(detail: IGliderDetail) {
-        return this._http.post(this.entryPoint + 'details', detail)
+        return this._http.post(this.entryPoint + "details", detail)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -118,31 +118,31 @@ export class DashboardService {
     }
 
     getDetails() {
-        return this._http.get(this.entryPoint + 'details')
+        return this._http.get(this.entryPoint + "details")
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
             })
     }
     deleteDetails(id) {
-        return this._http.delete(this.entryPoint + 'detail/' + id)
+        return this._http.delete(this.entryPoint + "detail/" + id)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
             })
     }
     updateDetails(id, details) {
-        return this._http.put(this.entryPoint + 'details/' + id, details)
+        return this._http.put(this.entryPoint + "details/" + id, details)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
             })
     }
 
-    //NEWS REST----------------------------------------------------------------
+    // NEWS REST----------------------------------------------------------------
 
     addNews(news) {
-        return this._http.post(this.entryPoint + 'news', news)
+        return this._http.post(this.entryPoint + "news", news)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -150,7 +150,7 @@ export class DashboardService {
     }
 
     getNews() {
-        return this._http.get(this.entryPoint + 'news')
+        return this._http.get(this.entryPoint + "news")
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())
@@ -158,7 +158,7 @@ export class DashboardService {
     }
 
     deleteNews(id) {
-        return this._http.delete(this.entryPoint + 'news/' + id)
+        return this._http.delete(this.entryPoint + "news/" + id)
             .map((res: Response) => res.json())
             .catch((error: Response) => {
                 return Observable.throw(error.json())

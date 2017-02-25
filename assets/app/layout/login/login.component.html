@@ -3,14 +3,14 @@
         <p class="close-btn" (click)="_layoutService.closeLoginModal(false)">X</p>
         <img src="/images/para2017.svg" class="registration-logo" alt="logo">
         <h3 class="registration-header">Log in</h3>
-        <form (ngSubmit)="login()" class="registration-form" [formGroup]="loginForm">
+        <form class="registration-form" [formGroup]="loginForm">
             <md-input-container class="registration-form_input input-material">
                 <input mdInput placeholder="Email" type="email" formControlName="email" required>
             </md-input-container>
             <md-input-container class="registration-form_input input-material">
                 <input mdInput placeholder="Password" type="password" formControlName="password" required>
             </md-input-container>
-            <button md-raised-button class="join-btn" type="submit">Log in</button>
+            <button md-raised-button class="join-btn" type="submit" (click)="login()">Log in</button>
         </form>
     </md-card>
 </div>

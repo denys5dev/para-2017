@@ -3,7 +3,6 @@ import { DashboardService } from './dashboard.service';
 
 import { HttpModule, Response, ResponseOptions, Http, BaseRequestOptions } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
-
 describe('DashboardService', () => {
 
     beforeEach(() => {
@@ -45,7 +44,7 @@ describe('DashboardService', () => {
 
                 dashboardService.getNews().subscribe((news) => {
                     expect(news.data.length).toBe(4);
-                })
+                });
             })
         )
     })

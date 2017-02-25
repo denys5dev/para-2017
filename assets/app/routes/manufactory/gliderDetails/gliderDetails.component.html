@@ -1,7 +1,7 @@
 <div class="app-content">
     <md-card>
         <h4 class="card-header">{{glider?.model}} : DETAILS</h4>
-        <table class="detail-table">
+        <table class="detail-table" *ngIf = "details">
             <tr>
                 <th>Size</th>
                 <th class="detail-size" *ngFor="let detail of details">{{detail.size}}</th>

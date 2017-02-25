@@ -1,48 +1,48 @@
-import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http'
-import { Observable } from 'rxjs';
-import 'rxjs/Rx';
-import { NotificationsService } from 'angular2-notifications';
-import { ENTRY_POINT } from './../env/env';
+// Auth AuthService
+
+import { Injectable } from "@angular/core";
+import { Headers, Http, Response } from "@angular/http";
+import { NotificationsService } from "angular2-notifications";
+import { Observable } from "rxjs";
+import "rxjs/Rx";
+import { ENTRY_POINT } from "./../env/env";
 
 @Injectable()
 
 export class AuthService {
-
 
   private entryPoint = ENTRY_POINT;
 
   constructor(private _http: Http, private _toastrService: NotificationsService) {
   }
 
-  addUser(user) {
-    return this._http.post(this.entryPoint + 'user', user)
+  public addUser(user) {
+    return this._http.post(this.entryPoint + "user", user)
       .map((res: Response) => res.json());
   }
 
-  loginUser(user) {
-    return this._http.post(this.entryPoint + 'user/login', user)
+  public loginUser(user) {
+    return this._http.post(this.entryPoint + "user/login", user)
       .map((res: Response) => res.json())
       .catch((error: Response) => {
-        return Observable.throw(error.json())
-      })
+        return Observable.throw(error.json());
+      });
   }
 
-  logout() {
+  public logout() {
     this._toastrService.alert("Bye!", "Logged out");
     localStorage.clear();
   }
 
-  isLoggedIn() {
-    return localStorage.getItem('token') !== null;
+  public isLoggedIn() {
+    return localStorage.getItem("token") !== null;
   }
 
-  isAdmin() {
+  public isAdmin() {
     return localStorage.getItem("role");
   }
 
-  getUserName() {
+  public getUserName() {
     return localStorage.getItem("name");
   }
-
 }

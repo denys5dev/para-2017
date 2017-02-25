@@ -3,7 +3,7 @@
         <p class="close-btn" (click)="_layoutService.closeJoinModal(false)">X</p>
         <img src="/images/para2017.svg" class="registration-logo" alt="logo">
         <h3 class="registration-header">Registration</h3>
-        <form (ngSubmit)="save()" class="registration-form" [formGroup]="registrationForm">
+        <form class="registration-form" [formGroup]="registrationForm">
             <md-input-container class="registration-form_input input-material" mdInput>
                 <input mdInput placeholder="First and last Name" type="text" formControlName="name" required>
             </md-input-container>
@@ -16,7 +16,7 @@
             <md-input-container class="registration-form_input input-material" mdInput>
                 <input mdInput placeholder="Confirm password" type="password" formControlName="confirmPassword" required>
             </md-input-container>
-            <button md-raised-button class="join-btn" type="submit">Join</button>
+            <button md-raised-button class="join-btn" type="submit" (click) ="save()">Join</button>
         </form>
     </md-card>
 </div>

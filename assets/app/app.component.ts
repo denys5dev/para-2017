@@ -1,24 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { NotificationsService, SimpleNotificationsComponent } from 'angular2-notifications'
+// AppComponent
+
+import { Component } from "@angular/core";
+import { NotificationsService, SimpleNotificationsComponent } from "angular2-notifications";
 
 @Component({
-    selector: 'root-app',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    selector: "root-app",
+    styleUrls: ["./app.component.scss"],
+    templateUrl: "./app.component.html",
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent {
 
     constructor(private _service: NotificationsService) {
 
     }
-    ngOnInit() {
-        
-    }
 
-    public options = {
-        position: ["bottom", "right"],
-        timeOut: 5000,
-        lastOnBottom: true
-    }
+    // tslint:disable-next-line:member-access
+    // tslint:disable-next-line:member-ordering
+    public options = { position: ["bottom", "right"], timeOut: 5000, lastOnBottom: true };
 }

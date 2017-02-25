@@ -1,18 +1,18 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { DashboardService } from './../dashboard.service';
-import 'rxjs/Rx';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { FormGroup, FormControl } from "@angular/forms";
+import { DashboardService } from "./../dashboard.service";
+import "rxjs/Rx";
 
-import { JQueryService } from './../../../core/fix/JQuery.service';
+import { JQueryService } from "./../../../core/fix/JQuery.service";
 
-import { Animations } from './../../../core/animations/roteTransition';
-import { NotificationsService } from 'angular2-notifications';
+import { Animations } from "./../../../core/animations/roteTransition";
+import { NotificationsService } from "angular2-notifications";
 
 @Component({
-    selector: 'add-maufactory',
-    templateUrl: './manufactoryForm.component.html',
-    styleUrls: ['./manufactoryForm.component.scss'],
-    host: { '[@routeAnimation]': 'true' },
+    selector: "add-maufactory",
+    templateUrl: "./manufactoryForm.component.html",
+    styleUrls: ["./manufactoryForm.component.scss"],
+    host: { "[@routeAnimation]": "true" },
     animations: Animations.page
 })
 
@@ -85,7 +85,7 @@ export class ManufactoryFormComponent implements OnInit {
                     this.get();
                 },
                 error => {
-                     this._toastrService.error(error.title, error.error.message);
+                    this._toastrService.error(error.title, error.error.message);
                 });
         }
         return;
