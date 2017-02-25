@@ -1,3 +1,5 @@
+// ManufactoryFormComponent
+
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { DashboardService } from "./../dashboard.service";
@@ -18,22 +20,21 @@ import { NotificationsService } from "angular2-notifications";
 
 export class ManufactoryFormComponent implements OnInit {
 
-    companyForm: FormGroup;
-    companies: any[];
-    isEditable: boolean;
-    editableCompany: any;
+    private companyForm: FormGroup;
+    private companies: any[];
+    private isEditable: boolean;
+    private editableCompany: any;
 
+    constructor(private _dasboardService: DashboardService,
+                private _jqueryService: JQueryService,
+                private _toastrService: NotificationsService) { }
 
-    constructor(private _dasboardService: DashboardService, private _jqueryService: JQueryService, private _toastrService: NotificationsService) {
-
-    }
-
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.isEditable = false;
 
-        this._dasboardService.getCompanies().subscribe(res => {
+        this._dasboardService.getCompanies().subscribe((res) => {
             this.companies = res.data;
-        })
+        });
 
         this.companyForm = new FormGroup({
             name: new FormControl(),
@@ -47,26 +48,26 @@ export class ManufactoryFormComponent implements OnInit {
         });
     }
 
-    get() {
-        this._dasboardService.getCompanies().subscribe(res => {
+    private get() {
+        this._dasboardService.getCompanies().subscribe((res) => {
             this.companies = res.data;
-        })
+        });
     }
 
-    save() {
+    private save() {
         if (this.isEditable) {
-            let isConfirm = confirm("Are you sure?");
+            const isConfirm = confirm("Are you sure?");
             if (isConfirm) {
-                this._dasboardService.updateCompany(this.editableCompany, this.companyForm.value).subscribe(res => {
+                this._dasboardService.updateCompany(this.editableCompany, this.companyForm.value).subscribe((res) => {
 
                     this._jqueryService.clearMdLabel();
 
                     this.get();
                     this.isEditable = false;
-                })
+                });
             }
         } else {
-            this._dasboardService.addCompany(this.companyForm.value).subscribe(res => {
+            this._dasboardService.addCompany(this.companyForm.value).subscribe((res) => {
                 if (res.data) {
                     this.companies.push(res.data);
                 }
@@ -77,26 +78,26 @@ export class ManufactoryFormComponent implements OnInit {
         this.companyForm.reset();
     }
 
-    delete(id) {
-        let isConfirm = confirm("Are you sure?");
+    private delete(id) {
+        const isConfirm = confirm("Are you sure?");
         if (isConfirm) {
             this._dasboardService.deleteCompany(id).subscribe(
-                res => {
+                (res) => {
                     this.get();
                 },
-                error => {
+                (error) => {
                     this._toastrService.error(error.title, error.error.message);
                 });
         }
         return;
     }
 
-    reset() {
+    private reset() {
         this._jqueryService.clearMdLabel();
         this.isEditable = false;
     }
 
-    edit(company) {
+    private edit(company) {
         this.isEditable = true;
 
         this._jqueryService.addMdLabelFocus();
@@ -113,6 +114,5 @@ export class ManufactoryFormComponent implements OnInit {
             phone: company.phone,
             logo: company.logo
         });
-
     }
 }

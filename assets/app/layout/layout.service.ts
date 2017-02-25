@@ -1,34 +1,33 @@
-import { Injectable } from '@angular/core';
+// LayoutService
+
+import { Injectable } from "@angular/core";
 
 @Injectable()
 
 export class LayoutService {
 
-    isOpenDialog: boolean = false;
-    isOpneLoginModad: boolean = false;
+    private isOpenDialog: boolean = false;
+    private isOpneLoginModad: boolean = false;
 
-    constructor() {
-    }
-
-    openJoinModal(flag) {
+    public openJoinModal(flag) {
         this.isOpenDialog = flag;
     }
-    openLoginModal(flag) {
+    public openLoginModal(flag) {
         this.isOpneLoginModad = flag;
     }
 
-    closeJoinModal(flag) {
+    public closeJoinModal(flag) {
         this.isOpenDialog = flag;
     }
-    closeLoginModal(flag) {
+    public closeLoginModal(flag) {
         this.isOpneLoginModad = flag;
     }
 
-    isOpenJoinModal(): boolean {
+    public isOpenJoinModal(): boolean {
         return this.isOpenDialog;
     }
 
-     isOpenLoginModal(): boolean {
+    public isOpenLoginModal(): boolean {
         return this.isOpneLoginModad;
     }
 

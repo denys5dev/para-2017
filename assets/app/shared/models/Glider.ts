@@ -1,9 +1,11 @@
-export interface IGlider {
-    company: string;
-    model: string;
-    photo: string;
-    video: string;
-    about: string;
-    email: string;
-    year: string;
+// Glider Model
+
+export class Glider {
+    private company: string;
+    private model: string;
+    private photo: string;
+    private video: string;
+    private about: string;
+    private email: string;
+    private year: string;
 }

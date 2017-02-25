@@ -2,7 +2,7 @@
 
 import { Component, OnInit } from "@angular/core";
 
-import { ICompany } from "../../../shared/models/Company";
+import { Company } from "../../../shared/models/Company";
 import { Animations } from "../../../core/animations/roteTransition";
 import { ManufactoryService } from "../manufactory.service";
 import { Router, ActivatedRoute } from "@angular/router";
@@ -17,7 +17,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 
 export class CompanysComponent implements OnInit {
 
-    public companies: ICompany[];
+    public companies: Company[];
 
     constructor(private _manufactoryService: ManufactoryService, private _router: Router, private _route: ActivatedRoute ) {
     }
@@ -28,8 +28,7 @@ export class CompanysComponent implements OnInit {
         });
     }
 
-    public goToModels(id) {
+    private goToModels(id) {
         this._router.navigate(["../company/" + id ], { relativeTo: this._route});
     }
-
 }

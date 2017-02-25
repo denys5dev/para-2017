@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ManufactoryService } from '../manufactory.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { IGlider } from '../../../shared/models/Glider';
+import { Glider } from '../../../shared/models/Glider';
 import { Animations } from '../../../core/animations/roteTransition';
 
 @Component({

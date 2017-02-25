@@ -1,39 +1,12 @@
-// export class Company {
-//     name: string;
-//     adress: string;
-//     city: string;
-//     country: string;
-//     email: string;
-//     web: string;
-//     phone: string;
-//     logo: string;
-//     constructor(
-//         name: string,
-//         adress: string,
-//         city: string,
-//         country: string,
-//         email: string,
-//         web: string,
-//         phone: string,
-//         logo: string, ) {
-//                 this.name = name;
-//                 this.adress = adress;
-//                 this.city = city;
-//                 this.country = country;
-//                 this.email = email;
-//                 this.web = web;
-//                 this.phone = phone;
-//                 this.logo = logo;
-//     }
-// }
+// Company Model
 
-export interface ICompany {
-    name: string;
-    adress: string;
-    city: string;
-    country: string;
-    email: string;
-    web: string;
-    phone: string;
-    logo: string;
+export class Company {
+    public name: string;
+    public adress: string;
+    public city: string;
+    public country: string;
+    public email: string;
+    public web: string;
+    public phone: string;
+    public logo: string;
 }

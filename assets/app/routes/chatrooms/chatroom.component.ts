@@ -44,15 +44,15 @@ export class ChatroomComponent implements OnInit, AfterViewChecked, OnDestroy {
         }
     }
 
-    public send(message) {
+    public ngOnDestroy() {
+        this.messageConnection.unsubscribe();
+    }
+
+    private send(message) {
         if (message) {
             // tslint:disable-next-line:object-literal-shorthand
             this._chatService.sendMsg( { message: message, user: this.name } );
             this.msg = "";
         }
-    }
-
-    public ngOnDestroy() {
-        this.messageConnection.unsubscribe();
     }
 }
