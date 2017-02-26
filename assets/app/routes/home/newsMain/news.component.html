@@ -1,0 +1,14 @@
+<div class="home-wrapper">
+    <md-card class="example-card" *ngFor="let new of news | orderBy : ['-']">
+        <md-card-header class="header-container">
+            <!--<div md-card-avatar class="example-header-image"></div>-->
+            <md-card-title class="news-header">{{new.title}}</md-card-title>
+            <md-card-subtitle class="news-sub">{{new.date | date: 'medium'}}</md-card-subtitle>
+            <md-card-subtitle class="news-sub">{{new.description}}</md-card-subtitle>
+             <md-card-subtitle class="news-sub">
+                <button md-button class="detail-btn" (click) = "showDetails(new._id)">DETAILS</button>
+             </md-card-subtitle>
+            <img md-card-image class="pre-image" src="{{new.image}}">
+        </md-card-header>
+    </md-card>
+</div>

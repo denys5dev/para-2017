@@ -160,6 +160,14 @@ export class DashboardService {
             });
     }
 
+    public getNewsById(id) {
+        return this._http.get(this.entryPoint + "news/" + id)
+            .map((res: Response) => res.json())
+            .catch((error: Response) => {
+                return Observable.throw(error.json());
+            });
+    }
+
     public deleteNews(id) {
         return this._http.delete(this.entryPoint + "news/" + id)
             .map((res: Response) => res.json())

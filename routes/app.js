@@ -460,7 +460,9 @@ router.post('/news', function (req, res, next) {
   var news = new News({
     title: req.body.title,
     body: req.body.body,
-    date: req.body.date
+    date: req.body.date,
+    description: req.body.description,
+    image: req.body.image
   });
   news.save(function (err, result) {
     if (err) {
@@ -474,6 +476,22 @@ router.post('/news', function (req, res, next) {
       data: result
     });
   });
+});
+
+router.get('/news/:id', function (req, res, next) {
+  News.findById(req.params.id)
+    .exec(function (err, news) {
+      if (err) {
+        return res.status(500).json({
+          title: 'Error',
+          error: err
+        });
+      }
+      res.status(200).json({
+        message: 'Success',
+        data: news
+      })
+    })
 });
 
 /*GET NEWS*/

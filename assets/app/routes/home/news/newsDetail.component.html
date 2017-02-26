@@ -1,0 +1,16 @@
+<div class="news-wrapper" *ngIf="newsDetail">
+    <md-card class="example-card">
+        <md-card-header class="header-container">
+            <!--<div md-card-avatar class="example-header-image"></div>-->
+            <md-card-title class="news-header">{{newsDetail.title}}</md-card-title>
+            <md-card-subtitle>{{newsDetail.date}}</md-card-subtitle>
+        </md-card-header>
+        <!--<img md-card-image src="/images/3.jpg">-->
+        <md-card-content>
+            <div class="news-body" [innerHTML]="newsDetail.body | safeHtml"></div>
+        </md-card-content>
+        <md-card-actions>
+          
+        </md-card-actions>
+    </md-card>
+</div>

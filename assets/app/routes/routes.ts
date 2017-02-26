@@ -13,6 +13,8 @@ import { GliderModelsComponent } from "./manufactory/gliderModels/gliderModels.c
 import { GliderDetailsComponent } from "./manufactory/gliderDetails/gliderDetails.component";
 import { WeatherComponent } from "./weather/weather.component";
 import { ChatroomComponent } from "./chatrooms/chatroom.component";
+import { NewsDetailComponent } from "./home/news/newsDetail.component";
+import { NewsComponent } from "./home/newsMain/news.component";
 
 import { AuthGuard } from "./../core/autentication/auth.guard";
 
@@ -26,7 +28,14 @@ const routes: Routes = [
                 path: "", component: LayoutComponent,
                 children: [
                     { path: "", redirectTo: "home", pathMatch: "full" },
-                    { path: "home", component: HomeComponent },
+                    {
+                        path: "home", component: HomeComponent,
+                        children: [
+                            { path: "", redirectTo: "news", pathMatch: "full" },
+                            { path: "news", component: NewsComponent },
+                            { path: "news/:id", component: NewsDetailComponent }
+                        ]
+                    },
                     {
                         path: "manufactories", component: ManufactoryComponent,
                         children: [
@@ -42,10 +51,10 @@ const routes: Routes = [
                         path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard],
                         children: [
                             { path: "", redirectTo: "addcompany", pathMatch: "full" },
-                            { path: "addcompany", component: ManufactoryFormComponent, canActivate: [AuthGuard]  },
-                            { path: "addmodel", component: ModelFormComponent, canActivate: [AuthGuard]  },
-                            { path: "addglider", component: GliderFormComponent, canActivate: [AuthGuard]  },
-                            { path: "adddnews", component: NewsFormComponent, canActivate: [AuthGuard]  }
+                            { path: "addcompany", component: ManufactoryFormComponent, canActivate: [AuthGuard] },
+                            { path: "addmodel", component: ModelFormComponent, canActivate: [AuthGuard] },
+                            { path: "addglider", component: GliderFormComponent, canActivate: [AuthGuard] },
+                            { path: "adddnews", component: NewsFormComponent, canActivate: [AuthGuard] }
                         ]
                     },
                     { path: "weather", component: WeatherComponent },
@@ -54,7 +63,7 @@ const routes: Routes = [
             }
         ]
     },
-      // Not found
+    // Not found
     { path: "**", redirectTo: "home" }
 ];
 

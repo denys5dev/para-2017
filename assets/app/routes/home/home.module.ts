@@ -1,15 +1,19 @@
+// Home Module
 
-import { NgModule } from '@angular/core';
-import { SharedModule } from './../../shared/shared.module';
+import { NgModule } from "@angular/core";
+import { SharedModule } from "./../../shared/shared.module";
 
-import { HomeComponent } from './home.component';
+import { HomeComponent } from "./home.component";
+import { NewsDetailComponent } from "./news/newsDetail.component";
+import { NewsComponent } from "./newsMain/news.component";
 
-import { SafeHtmlPipe } from './../../shared/pipes/saveHtml.pipe';
-
+import { SafeHtmlPipe } from "./../../shared/pipes/saveHtml.pipe";
 
 @NgModule({
     declarations: [
         HomeComponent,
+        NewsDetailComponent,
+        NewsComponent,
         SafeHtmlPipe
     ],
 
@@ -21,6 +25,8 @@ import { SafeHtmlPipe } from './../../shared/pipes/saveHtml.pipe';
 
     exports: [
         HomeComponent,
+        NewsDetailComponent,
+        NewsComponent,
         SafeHtmlPipe
 
     ]

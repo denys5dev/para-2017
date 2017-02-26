@@ -11,6 +11,20 @@
                         </md-input-container>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <textarea mdInput placeholder="Desciption" maxlength="160" formControlName="description" required></textarea>
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="input-material">
+                            <input mdInput placeholder="Preview Image" formControlName="image" required>
+                        </md-input-container>
+                    </td>
+                </tr>
             </table>
             <simple-tiny [elementId]="'my-editor-id'" (onEditorKeyup)="keyupHandlerFunction($event)"></simple-tiny>
             <div class="btn-group-editor">

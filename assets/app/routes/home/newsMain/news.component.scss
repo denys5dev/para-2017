@@ -1,0 +1,55 @@
+.home-wrapper {
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  margin-top: 64px;
+}
+
+.news-header {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  padding: 15px;
+}
+
+.news-sub {
+  padding: 5px 0px 0px 15px;
+  max-width: 465px;
+}
+
+.example-card {
+  margin: auto;
+  max-width: 900px;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.detail-btn {
+  background-color: orange;
+  color: white;
+}
+
+.news-body {
+  font-family: 'Oswald', sans-serif;
+}
+
+.header-container {
+  min-height: 238px;
+  justify-content: space-between;
+}
+
+.example-header-image {
+  background-image: url('assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.pre-image {
+  max-width: 300px !important;
+  margin: 0px;
+}
+
+:host {
+  width: 100%;
+  display: block;
+  position: absolute;
+}
