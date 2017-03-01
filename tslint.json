@@ -4,6 +4,9 @@
     "callable-types": true,
     "interface-name": [false],
     "interface-over-type-literal": true,
+    "indent": [
+      false
+    ],
     "ordered-imports": [
       false
     ],

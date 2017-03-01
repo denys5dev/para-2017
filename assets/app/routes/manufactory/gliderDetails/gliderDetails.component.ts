@@ -1,6 +1,6 @@
 // GliderDetailsComponent
 
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, Compiler } from "@angular/core";
 import { Animations } from "../../../core/animations/roteTransition";
 import { Router, ActivatedRoute } from "@angular/router";
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from "@angular/platform-browser";
@@ -11,8 +11,7 @@ import { ManufactoryService } from "../manufactory.service";
 	selector: "gliderDetails",
 	templateUrl: "gliderDetails.component.html",
 	styleUrls: ["./gliderDetails.component.scss"],
-	host: { "[@routeAnimation]": "true" },
-	animations: Animations.page
+	host: { "[@routeAnimation]": "true" }, animations: Animations.page
 })
 
 export class GliderDetailsComponent implements OnInit, OnDestroy {
@@ -23,12 +22,13 @@ export class GliderDetailsComponent implements OnInit, OnDestroy {
 	private sub: any;
 
 	constructor(private _manufactorySercive: ManufactoryService,
-				private _router: Router,
-				private _route: ActivatedRoute,
-				private _sanitizer: DomSanitizer) { }
+				         private _router: Router,
+				         private _route: ActivatedRoute,
+				         private _sanitizer: DomSanitizer) { }
 
-	ngOnInit() {
+	public ngOnInit() {
 		this.sub = this._route.params
+			// tslint:disable-next-line:no-string-literal
 			.map((params) => params["id"])
 			.subscribe((id) => {
 				this._manufactorySercive.getDetailByGlider(id).subscribe((res) => {
@@ -39,7 +39,7 @@ export class GliderDetailsComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	ngOnDestroy() {
+	public ngOnDestroy() {
 		this.sub.unsubscribe();
 	}
 }

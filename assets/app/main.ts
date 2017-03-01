@@ -1,8 +1,10 @@
-import './polyfills';
-import {NotificationsService} from 'angular2-notifications/components'
-import {COMPILER_PROVIDERS} from '@angular/compiler';
+// Main
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import "./polyfills";
+import {NotificationsService} from "angular2-notifications/components";
+import {COMPILER_PROVIDERS} from "@angular/compiler";
+
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
 import { AppModule } from "./app.module";
 
