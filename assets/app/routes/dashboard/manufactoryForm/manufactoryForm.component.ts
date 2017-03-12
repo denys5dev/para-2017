@@ -5,7 +5,6 @@ import { FormGroup, FormControl } from "@angular/forms";
 import { DashboardService } from "./../dashboard.service";
 import "rxjs/Rx";
 
-import { JQueryService } from "./../../../core/fix/JQuery.service";
 
 import { Animations } from "./../../../core/animations/roteTransition";
 import { NotificationsService } from "angular2-notifications";
@@ -26,7 +25,6 @@ export class ManufactoryFormComponent implements OnInit {
     private editableCompany: any;
 
     constructor(private _dasboardService: DashboardService,
-                private _jqueryService: JQueryService,
                 private _toastrService: NotificationsService) { }
 
     public ngOnInit(): void {
@@ -60,8 +58,6 @@ export class ManufactoryFormComponent implements OnInit {
             if (isConfirm) {
                 this._dasboardService.updateCompany(this.editableCompany, this.companyForm.value).subscribe((res) => {
 
-                    this._jqueryService.clearMdLabel();
-
                     this.get();
                     this.isEditable = false;
                 });
@@ -71,7 +67,6 @@ export class ManufactoryFormComponent implements OnInit {
                 if (res.data) {
                     this.companies.push(res.data);
                 }
-                this._jqueryService.clearMdLabel();
             });
         }
         this.isEditable = false;
@@ -92,15 +87,12 @@ export class ManufactoryFormComponent implements OnInit {
         return;
     }
 
-    private reset() {
-        this._jqueryService.clearMdLabel();
+    private reset() {   
         this.isEditable = false;
     }
 
     private edit(company) {
         this.isEditable = true;
-
-        this._jqueryService.addMdLabelFocus();
 
         this.editableCompany = company._id;
 

@@ -596,8 +596,9 @@ html {
 
 body {
   font-family: 'Oswald', sans-serif;
-  background-image: url('/images/2.jpg');
-  background-repeat: no-repeat;
+  /*background-image: url('/images/2.jpg');
+  background-repeat: no-repeat;*/
+  background: url('/images/b26.png');
   height: 100%;
   width: 100%;
 }

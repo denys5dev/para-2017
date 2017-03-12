@@ -3,8 +3,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { DashboardService } from './../dashboard.service';
 import 'rxjs/Rx';
 
-import { JQueryService } from './../../../core/fix/JQuery.service';
-
 import { Animations } from './../../../core/animations/roteTransition';
 
 @Component({
@@ -23,7 +21,7 @@ export class GliderFormComponent implements OnInit {
     isEditable: boolean;
     editableDetail: any;
 
-    constructor(private _dasboardService: DashboardService, private _jqueryService: JQueryService) {
+    constructor(private _dasboardService: DashboardService) {
 
     }
 
@@ -80,7 +78,6 @@ export class GliderFormComponent implements OnInit {
             this._dasboardService.addDetails(this.detailForm.value)
                 .subscribe(res => {
                     this.get();
-                    this._jqueryService.clearMdLabel();
                 });
         }
         this.isEditable = false;
@@ -100,7 +97,6 @@ export class GliderFormComponent implements OnInit {
     edit(detail) {
         this.isEditable = true;
 
-        this._jqueryService.addMdLabelFocus();
 
         this.editableDetail = detail._id;
 
@@ -131,7 +127,6 @@ export class GliderFormComponent implements OnInit {
     }
 
     reset() {
-        this._jqueryService.clearMdLabel();
         this.isEditable = false;
     }
 

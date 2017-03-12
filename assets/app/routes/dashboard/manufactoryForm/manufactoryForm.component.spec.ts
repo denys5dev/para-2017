@@ -3,7 +3,6 @@ import { ManufactoryFormComponent } from './manufactoryForm.component';
 import { MaterialModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardService } from './../dashboard.service';
-import { JQueryService } from './../../../core/fix/JQuery.service';
 
 describe('ManufactoryFormComponent', () => {
 
@@ -11,7 +10,7 @@ describe('ManufactoryFormComponent', () => {
         TestBed.configureTestingModule({
             imports: [ReactiveFormsModule, MaterialModule.forRoot()],
             declarations: [ManufactoryFormComponent],
-            providers: [DashboardService, JQueryService]
+            providers: [DashboardService]
         });
     });
 

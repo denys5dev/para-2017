@@ -14,7 +14,7 @@ import { ChatroomModule } from "./routes/chatrooms/chatrooms.module";
 import { appRoutingProviders } from "./routes/routes";
 import { JitCompiler } from "@angular/compiler";
 import { SimpleNotificationsModule } from "angular2-notifications";
-import { JQueryService } from "./core/fix/JQuery.service";
+
 
 import { AppComponent } from "./app.component";
 
@@ -32,7 +32,7 @@ import { AppComponent } from "./app.component";
         ChatroomModule,
         SimpleNotificationsModule.forRoot()
     ],
-    providers: [appRoutingProviders, JQueryService, {
+    providers: [appRoutingProviders, {
         provide: Compiler,
         useExisting: JitCompiler }]
 })

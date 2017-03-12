@@ -38,8 +38,7 @@ import { MdProgressBarModule } from '@angular/material/progress-bar';
         MaterialModule.forRoot()
     ],
     providers: [
-        MdIconRegistry,
-        
+        MdIconRegistry
     ],
     declarations: [
         OrderBy

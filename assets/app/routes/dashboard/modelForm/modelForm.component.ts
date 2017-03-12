@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DashboardService } from './../dashboard.service';
-import { JQueryService } from './../../../core/fix/JQuery.service';
 
 import { Animations } from './../../../core/animations/roteTransition';
 
@@ -21,7 +20,7 @@ export class ModelFormComponent implements OnInit {
     isEditable: boolean;
     editableModel: any;
 
-    constructor(private _dasboardService: DashboardService, private _jqueryService: JQueryService) {
+    constructor(private _dasboardService: DashboardService) {
 
     }
 
@@ -52,7 +51,6 @@ export class ModelFormComponent implements OnInit {
     }
 
     reset() {
-        this._jqueryService.clearMdLabel();
         this.isEditable = false;
     }
 
@@ -61,8 +59,6 @@ export class ModelFormComponent implements OnInit {
             let isConfirm = confirm("Are you sure?");
             if (isConfirm) {
                 this._dasboardService.updateGliderModel(this.editableModel, this.modelForm.value).subscribe(res => {
-
-                    this._jqueryService.clearMdLabel();
 
                     this.get();
                     this.isEditable = false;
@@ -73,7 +69,6 @@ export class ModelFormComponent implements OnInit {
                 if (res.data) {
                     this.gliders.push(res.data);
                 }
-                this._jqueryService.clearMdLabel()
             });
         }
         this.isEditable = false;
@@ -92,7 +87,6 @@ export class ModelFormComponent implements OnInit {
 
     edit(glider) {
         this.isEditable = true;
-        this._jqueryService.addMdLabelFocus();
 
         this.editableModel = glider._id;
 
